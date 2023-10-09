@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="div1">
+            <img src="../img/logo_blogger_40px_2x.png" alt="">
+        </div>
+        <div class="s-div">
+            <button type="button" class="btn btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="search" placeholder="Search">
+        </div>
+
+        <button type="button" class="btn">+ New Post</a></button>
+    </nav>
+
+    <section id="post-post-section">
+        <form>
+            <div class="post-post-div1">
+                <div class="post-post-div2">
+                    <label for="heading">Heading</label>
+                    <input type="text" id="heading" placeholder="Enter Heading">
+                    <label for="image">Image</label>
+                    <input type="text" id="image" placeholder="Enter Image URL">
+                    <label for="slug">Slug</label>
+                    <input type="text" id="slug" placeholder="Enter slug">
+                    <label for="tag">Slug</label>
+                    <input type="text" id="tag" placeholder="Enter tag">
+                </div>
+                <button type="submit" onclick="insertRec(event)">submit!!</button>
+            </div>
+            <textarea name="" id="content"></textarea>
+        </form>
+    </section>
+    <footer>
+        <p>Copyright © 2021 Blogger Inc., All Rights Reserved.</br></br>
+            <a< /p>
+    </footer>
+    <script src="../js/post.js"></script>
+</body>
+
+</html>

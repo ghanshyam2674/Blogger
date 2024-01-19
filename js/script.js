@@ -1,30 +1,3 @@
-
-const select_options = document.getElementById("select-options")
-
-
-
-
-const sliderContainer = document.querySelector('.slider-container');
-const images = document.querySelectorAll('#slider img');
-
-let currentIndex = 0;
-const intervalTime = 4000; // Change image every 4 seconds
-
-function nextSlide() {
-    currentIndex++;
-    if (currentIndex >= images.length) {
-        currentIndex = 0;
-    }
-    updateSlider();
-}
-
-function updateSlider() {
-    sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-
-setInterval(nextSlide, intervalTime);
-
-
 const demo = document.getElementById("article-secion");
 
 async function GetData() {
@@ -32,10 +5,46 @@ async function GetData() {
     let myObj = await fetch(URL);
     let myData = await myObj.json();
 
-    let myTab = `<div id="demo">`;
-    console.log(myData)
+    var cat = document.getElementById("cat").value;
 
-    myData.map((ele, index) => {
+    var cats = String(cat);
+
+    let Search = document.getElementById("search-input").value;
+    let searchs = String(Search);
+
+    // var filteredData = myData.filter(item => {
+    //     if (cat === 'all') {
+    //         return true; // Show all items
+    //     } else {
+    //         return item.category === cat;
+    //     }
+    // })
+
+    var filteredData = myData.filter(item => {
+
+        if (cat === 'all') {
+            return item.heading.toLowerCase().includes(searchs.toLowerCase());
+        } else {
+            return (
+                item.category === cat &&
+                item.heading.toLowerCase().includes(searchs.toLowerCase())
+            );
+        }
+    });
+
+    console.log(filteredData);
+    // function searchf() {
+    //     let filterSearch = myData.filter(item =>{
+    //         return item.heading === search;
+    //     })
+
+    //     console.log(filterSearch);
+    // }
+    // 
+    let myTab = `<div id="demo">`;
+    // console.log(filteredData)
+
+    filteredData.map((ele, index) => {
         myTab += `
         <a href="./html/read.html?id=${ele.id}" id="article" key=${index}>
             <article >
@@ -55,3 +64,16 @@ async function GetData() {
 }
 
 
+GetData()
+
+
+function toggle() {
+    const toggles = document.getElementById("div");
+
+    if (toggles.style.display == "none") {
+        toggles.style.display = "block"
+    }
+    else{
+        toggles.style.display = "none"
+    }
+}

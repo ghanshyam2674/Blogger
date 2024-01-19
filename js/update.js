@@ -19,7 +19,7 @@ function updateSave(cardId) {
     let content = document.getElementById("content").value;
     let image = document.getElementById("image").value;
     let tag = document.getElementById("tag").value;
-    let slug = document.getElementById("slug").value;
+    let cat = document.getElementById("cat").value;
 
     let url = `http://localhost:3000/database/${id}`
 
@@ -30,7 +30,7 @@ function updateSave(cardId) {
             content: content,
             image: image,
             tag: tag,
-            slug: slug
+            category: cat
         }),
         headers: {
             'Content-type': "application/json; charset=UTF-8"
@@ -70,9 +70,9 @@ async function updateData(cardId) {
                     <input type="text" id="heading" value="${myData.heading}">
                     <label for="image" id="hoverImage">Image</label>
                     <input type="text" id="image" value="${myData.image}">
-                    <label for="slug">Slug</label>
-                    <input type="text" id="slug" value="${myData.slug}">
-                    <label for="tag">Slug</label>
+                    <label for="slug">category</label>
+                    <input type="text" id="cat" value="${myData.category}">
+                    <label for="tag">Tag</label>
                     <input type="text" id="tag" value="${myData.tag}">
                 </div>
                 <button type="button" onclick="updateSave(${cardId})">submit!!</button>

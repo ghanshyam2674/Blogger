@@ -4,7 +4,7 @@ function insertRec(event) {
     let content = document.getElementById("content").value;
     let image = document.getElementById("image").value;
     let tag = document.getElementById("tag").value;
-    let slug = document.getElementById("slug").value;
+    let cat = document.getElementById("cat").value;
 
     let url = `http://localhost:3000/database`;
 
@@ -19,7 +19,7 @@ function insertRec(event) {
             content: content,
             image: image,
             tag: tag,
-            slug: slug
+            category: cat
         }),
 
         // Adding headers to the request
